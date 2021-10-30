@@ -12,10 +12,15 @@ import Login from './Pages/Login/Login/Login';
 import Header from './Pages/Shared/Header/Header';
 import Footer from './Pages/Footer/Footer';
 import AddUser from './Pages/AddUser/AddUser';
+import AuthProvider from './contexts/AuthProvider';
+import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
+import MyOrders from './Pages/MyOrders/MyOrders';
+import ManageAllOrders from './Pages/ManageAllOrders/ManageAllOrders';
 function App() {
   return (
     <div className="App">
-     <BrowserRouter>
+    <AuthProvider>
+    <BrowserRouter>
     <Header></Header>
      <Switch>
        <Route exact path="/">
@@ -27,12 +32,18 @@ function App() {
        <Route path="/services">
          <Services></Services>
        </Route>
-       <Route path="/adduser">
+       <PrivateRoute path="/adduser">
          <AddUser></AddUser>
-       </Route>
-       <Route path="/service/:orderName">
+       </PrivateRoute>
+       <PrivateRoute path="/myorders">
+         <MyOrders></MyOrders>
+       </PrivateRoute>
+       <PrivateRoute path="/manageallorders">
+         <ManageAllOrders></ManageAllOrders>
+       </PrivateRoute>
+       <PrivateRoute path="/service/:orderName">
          <PlaceOrder></PlaceOrder>
-       </Route>
+       </PrivateRoute>
        <Route path="/login">
          <Login></Login>
        </Route>
@@ -42,6 +53,7 @@ function App() {
      </Switch>
      <Footer></Footer>
      </BrowserRouter>
+    </AuthProvider>
     </div>
   );
 }

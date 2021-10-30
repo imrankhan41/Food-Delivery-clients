@@ -1,5 +1,9 @@
-.details{
-    margin-top: 50px;
-    background-color: azure!important;
-    padding: 20px;
+.details {
+  margin-top: 110px;
+  background-color: azure !important;
+  padding: 20px;
+}
+.booking {
+  margin-top: 110px;
+  background-color: rgb(241, 238, 234);
 }
