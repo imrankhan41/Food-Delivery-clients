@@ -1,9 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
-
+import axios from 'axios';
+import { useForm } from "react-hook-form";
 import "./PlaceOrder.css"
 const PlaceOrder = () => {
+    const { register, handleSubmit } = useForm();
+    const onSubmit = data => console.log(data);
     const {users,email}=useAuth();
     const {orderName}=useParams();
     const [details,setDetails]=useState([]);
@@ -35,9 +38,17 @@ const PlaceOrder = () => {
             </div>
         </div>
             </div>
-            <div className="col-lg-6 booking text-secondary">
+            <div className="col-lg-6 booking text-secondary add1-user">
                 <h4>Ordered By:{users?.displayName}</h4>
                 <h4>Email:{users?.email}</h4>
+                <form className="add-user" onSubmit={handleSubmit(onSubmit)}>
+                <input {...register("name", { required: true, maxLength: 100 })} placeholder="Name" />
+                <input {...register("img")}  placeholder="Personal Photo"/>
+                <textarea {...register("text")} placeholder="Address"/>
+                <textarea {...register("description")} placeholder="Description" />
+                <input type="number" {...register("price")} placeholder="Phone Number"/>
+                <input type="submit" />
+                </form>
             </div>
         </div>
         

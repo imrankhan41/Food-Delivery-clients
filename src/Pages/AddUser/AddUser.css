@@ -1,3 +1,13 @@
 .add-user{
     margin-top: 150px;
 }
+.add-user form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.add-user form input, textarea{
+    width: 40%;
+    margin-bottom: 10px;
+}
