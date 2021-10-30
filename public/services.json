@@ -1,0 +1,44 @@
+[
+    {
+      "name": "Chicken Makhani",
+      "price": 5,
+      "text":"Butter chicken is mouth-watering, tender chicken, cooked in a spiced tomato sauce. It’s traditionally cooked in a tandoor (a cylindrical clay or metal oven)",
+      "description": "Butter chicken is mouth-watering, tender chicken, cooked in a spiced tomato sauce. It’s traditionally cooked in a tandoor (a cylindrical clay or metal oven), but may be grilled, roasted or pan-fried in less authentic preparations.Always make the gravy by first cooking fresh tomato, garlic, and cardamom down into a bright red pulp. This pulp is then pureed after cooling. Then, the chef adds butter, various spices, and Khoa (dried whole milk).",
+      "img": "https://i.ibb.co/WP3bzfk/butter-chicken-Chicken-Makhani.jpg"
+    },
+    {
+      "name": "Aloo Gobi (Potato and Cauliflower)",
+      "price": 6,
+      "text":"Aloo Gobi is a dry, vegan Indian dish, made with potatoes (aloo), cauliflower (gobi), and Indian spices.",
+      "description": "Aloo Gobi is a dry, vegan Indian dish, made with potatoes (aloo), cauliflower (gobi), and Indian spices. It has a warm, yellow-orange color, because it uses a staple in Indian dishes: turmeric.Aloo Gobi occasionally contains kalonji and curry leaves as well. Other common ingredients include garlic, ginger, onion, coriander stalks, tomato, peas, and cumin. Throw it all together to roast in the oven and you’ve got one of the most popular dishes ordered in Indian restaurants.",
+      "img": "https://i.ibb.co/Dr4QrHT/Indian-Cauliflower-Potatoe.jpg"
+    },
+    {
+      "name": "Naan (Flatbread)",
+      "price": 5,
+      "text":"If you’ve never experienced good naan bread, your life has been much less delicious than it could be",
+      "description": "If you’ve never experienced good naan bread, your life has been much less delicious than it could be.Naan is a leavened, oven-baked flatbread. You normally serve Naan with all meals.This bread is the perfect combination of chewy and crispy, buttery and garlicky. It’s exactly what every Indian dish needs to complement the otherwise bright and intense flavors.There are many different types of naan breads depending on what you’re in the mood for.(1)Butter and garlic naan bread are the classics.(2)Paneer naan is a delicious Indian cheese type.(3)Chili naan is great for those spice fiends.(4)And of course, there’s always the classic, no-fuss, plain naan.However you eat it, naan acts as almost a spoon to soup up sauce or dipped into chutneys. An Indian meal isn’t complete without naan at its side.",
+      "img": "https://i.ibb.co/TPRrX5k/garlic-naam.jpg"
+    },
+    {
+      "name": "Matar Paneer (Peas and Cooked Cottage Cheese)",
+      "price": 6,
+      "text":"Matar paneer comes from regions of northern India. It’s made up of a yummy tomato sauce over paneer ",
+      "description": "Matar paneer comes from regions of northern India. It’s made up of a yummy tomato sauce over paneer (farmer’s cheese) and peas, and spiced with garam masala. Like many Indian dishes, matar paneer is best when paired with a cooling side dish, like cream or bread.Depending on the region, it’s likely to be served with rice, naan, paratha, poori, or roti.Enjoy dipping your bread (or Naan) into the tomato gravy after you eat up the cheese and veggies.Whether you choose naan, yogurt, aloo, or cream, to pair with this dish, your taste buds will thank you!",
+      "img": "https://i.ibb.co/NrXLXCQ/Matar-Paneer-Peas-and-Cooked-Cottage-Cheese.jpg"
+    },
+    {
+      "name": " Rogan Josh (Curried Meat)",
+      "price": 7,
+      "text":"Rogan josh is a staple of Kashmiri (region in northern India) cuisine. It’s one of the main dishes of a Wazwan:",
+      "description": "Rogan josh is a staple of Kashmiri (region in northern India) cuisine. It’s one of the main dishes of a Wazwan: a Kashmiri multi-course meal.Rogan Josh consists of braised lamb chunks cooked with gravy. Generally, Indian chefs make this gravy from browned onions, yogurt, garlic, ginger, and aromatic spices.Known for its brilliant red color, a classic rogan josh uses liberal amounts of dried Kashmiri chillies.Make sure to de-seed these babies before you use them unless you’re a glutton for punishment. Though they are less hot when de-seeded, Kashmiri chilies tend to be milder than cayenne chilies. You will find cayenne chilies in many other Indian dishes.Most of the spiciness from a rogan josh comes from the fragrance of the dish rather than the heat. It’s a yummy treat that is mild enough for Western palates, but intense enough for spice-lovers. If you love lamb, this dish is a must-try.",
+      "img": "https://i.ibb.co/HYmp23Z/curried-meat-Indian-dshes.jpg"
+    },
+    {
+      "name": "  Chutney (Fruit Sauce)",
+      "price": 7,
+      "text":"As mentioned above, chutney (or “chatni”) is a sauce that is a flavorful sweet pair to savory samosas.",
+      "description": "As mentioned above, chutney (or “chatni”) is a sauce that is a flavorful sweet pair to savory samosas. It’s a relish made of various types of fruits, herbs, and spices, and it originated in India over 2,000 years ago. Heads up again, vegans, this is one for you.Make this chutney with brown sugar, turmeric, red wine vinegar. Add a smattering of other lip-smacking goodies such as mango chutney is a tangy treat in a world of Indian spiciness.Though usually fruity, savory chutneys are also a thing. Both mango and onion chutney recipe was specially crafted by Chef Marie to be the perfect side pairing for any Indian food meal.",
+      "img": "https://i.ibb.co/NKMQ6P5/chutney-Eating-clean-in-costa-rica.jpg"
+    }
+  ]

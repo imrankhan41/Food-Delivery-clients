@@ -1,0 +1,28 @@
+.img-banner{
+    width:100vh;
+    height: 80vh;
+}
+.banner{
+    margin-top: 80px;
+}
+.button-banner{
+    border:1px solid rgb(24, 1, 1);
+    padding: 10px 15px;
+    background-color: red;
+    color: white;
+    border-radius: 10px;
+    font-weight: 900;
+
+}
+.button-banner:hover{
+ color: black;
+ background-color: rgb(235, 230, 230);
+border:1px solid blue;
+border-radius: 10px;
+font-weight: 900;
+
+}
+.text-color{
+    color:rgb(1, 7, 14);
+    font-weight: 900;
+}
