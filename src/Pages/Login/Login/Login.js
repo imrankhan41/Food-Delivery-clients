@@ -3,7 +3,7 @@ import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../../hooks/useAuth';
 import "./Login.css"
 const Login = () => {
-    const { signInUsingGoggle}=useAuth();
+    const { signInUsingGoggle,setIsLoading}=useAuth();
     const location =useLocation();
     console.log("came from",location.state?.from)
     const redirect_uri=location.state?.from || "/home"
@@ -12,7 +12,8 @@ const Login = () => {
         signInUsingGoggle()
         .then(result => {
             history.push(redirect_uri)
-        });
+        }) 
+        .finally(()=>setIsLoading(false));
     }
     return (
         <div className="login">

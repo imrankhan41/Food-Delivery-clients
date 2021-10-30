@@ -5,6 +5,7 @@ import initializeAuthentication from "../Pages/Login/Firebase/Firebase.init";
 initializeAuthentication();
 const useFirebase =()=>{
     const [users,setUsers]=useState({});
+    const [isLoading,setIsLoading]=useState(true);
     const auth = getAuth();
     
     const signInUsingGoggle =()=>{
@@ -21,21 +22,25 @@ const useFirebase =()=>{
             else{
                 setUsers({})
             }
+            setIsLoading(false);
         });
         return ()=>unsubscribded;
     },[]);
     const logOut=()=>{
+        setIsLoading(true)
         signOut(auth)
         .then(() => {
             
           })
+          .finally(()=>setIsLoading(false));
     }
  
     
     return{
         users,
         signInUsingGoggle,
-        logOut
+        isLoading,
+        logOut,setIsLoading
     }
 }
 export default useFirebase;
