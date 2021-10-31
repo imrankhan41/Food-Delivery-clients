@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+// import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import "./MyOrders.css"
 const MyOrders = () => {
@@ -9,6 +9,21 @@ const MyOrders = () => {
        .then(res=>res.json())
        .then(data=>setUser(data))
    },[])
+   const handleDeleteUser =id=>{
+       const url=`http://localhost:5000/orders/${id}`
+       fetch(url,{
+           method:"DELETE"
+       })
+       .then(res=>res.json())
+       .then(data=>{
+           if(data.deletedCount>0){
+               alert("deleted successfully")
+               const reamainingUser =user.filter(userr=>userr._id!==id)
+               setUser(reamainingUser)}
+           })
+       }
+       
+   
     return (
         <div className="My-orders">
             <h1>My All Orders</h1>
@@ -36,23 +51,11 @@ const MyOrders = () => {
                          <td>{user.address}</td>
                          <td>
                              <Link className="m-1 btn btn-primary" to={`/orders/${user._id}`}>View</Link>
-                             <Link className="m-2 btn btn-outline-primary" to={`/edituser/${user._id}`}>Edit</Link>
-                             <Link className="btn btn-danger">Delete</Link>
+                             {/* <Link className="m-2 btn btn-outline-primary" to={`/edituser/${user._id}`}>Edit</Link> */}
+                             <Link className="btn btn-danger" onClick={()=>handleDeleteUser(user._id)}>Delete</Link>
                              </td>
                          </tr>
                     ))}
-                   
-                    {/* <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>Thornton</td>
-                    <td>@fat</td>
-                    </tr>
-                    <tr>
-                    <th scope="row">3</th>
-                    <td colspan="2">Larry the Bird</td>
-                    <td>@twitter</td>
-                    </tr> */}
                 </tbody>
                 </table>
         </div>
