@@ -16,6 +16,8 @@ import AuthProvider from './contexts/AuthProvider';
 import PrivateRoute from './Pages/Login/PrivateRoute/PrivateRoute';
 import MyOrders from './Pages/MyOrders/MyOrders';
 import ManageAllOrders from './Pages/ManageAllOrders/ManageAllOrders';
+import EditUser from './Pages/EditUser/EditUser';
+import MyDetailsOrder from './Pages/MyDetailsOrder/MyDetailsOrder';
 function App() {
   return (
     <div className="App">
@@ -35,11 +37,17 @@ function App() {
        <PrivateRoute path="/adduser">
          <AddUser></AddUser>
        </PrivateRoute>
-       <PrivateRoute path="/myorders/update/:name">
+       <PrivateRoute path="/myorders">
          <MyOrders></MyOrders>
        </PrivateRoute>
        <PrivateRoute path="/manageallorders">
          <ManageAllOrders></ManageAllOrders>
+       </PrivateRoute>
+       <PrivateRoute path="/edituser">
+         <EditUser></EditUser>
+       </PrivateRoute>
+       <PrivateRoute path="/orders/:orderid">
+         <MyDetailsOrder></MyDetailsOrder>
        </PrivateRoute>
        <PrivateRoute path="/service/:serviceId">
          <PlaceOrder></PlaceOrder>
