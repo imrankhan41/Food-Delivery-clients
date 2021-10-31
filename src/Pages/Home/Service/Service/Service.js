@@ -3,7 +3,7 @@ import { Card } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import "./Service.css"
 const Service = (props) => {
-    const {name,img,price,text}=props.service
+    const {name,img,price,text,_id}=props.service
     return (
         <div className="m-2 card">
              <Card>
@@ -21,7 +21,9 @@ const Service = (props) => {
             </Card.Text>
             </Card.Body >
             <Card.Footer >
-                <button className="button1" ><Link className="link-button"  to={`/service/${name}`}>Buy Now</Link></button>
+            <Link to={`/service/${_id}`}>
+                <button className="btn btn-warning">Buy Now</button>
+            </Link>
             </Card.Footer>
         </Card>
     </div>
