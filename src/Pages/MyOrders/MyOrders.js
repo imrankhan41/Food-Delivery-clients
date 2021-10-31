@@ -10,17 +10,22 @@ const MyOrders = () => {
        .then(data=>setUser(data))
    },[])
    const handleDeleteUser =id=>{
-       const url=`http://localhost:5000/orders/${id}`
-       fetch(url,{
-           method:"DELETE"
-       })
-       .then(res=>res.json())
-       .then(data=>{
-           if(data.deletedCount>0){
-               alert("deleted successfully")
-               const reamainingUser =user.filter(userr=>userr._id!==id)
-               setUser(reamainingUser)}
-           })
+       
+       const proceed=window.confirm("Are you sure for deleting it?")
+       if(proceed){
+        const url=`http://localhost:5000/orders/${id}`
+        fetch(url,{
+            method:"DELETE"
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            if(data.deletedCount>0){
+                alert("deleted successfully")
+                const reamainingUser =user.filter(userr=>userr._id!==id)
+                setUser(reamainingUser)}
+            })
+       }
+       
        }
        
    
@@ -52,7 +57,7 @@ const MyOrders = () => {
                          <td>
                              <Link className="m-1 btn btn-primary" to={`/orders/${user._id}`}>View</Link>
                              {/* <Link className="m-2 btn btn-outline-primary" to={`/edituser/${user._id}`}>Edit</Link> */}
-                             <Link className="btn btn-danger" onClick={()=>handleDeleteUser(user._id)}>Delete</Link>
+                             <button className="btn btn-danger" onClick={()=>handleDeleteUser(user._id)}>Delete</button>
                              </td>
                          </tr>
                     ))}

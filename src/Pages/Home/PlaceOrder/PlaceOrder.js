@@ -15,8 +15,11 @@ const PlaceOrder = () => {
             body:JSON.stringify(data)
         })
         .then(res=>res.json())
-        .then(result=>{
-            console.log(result)
+        .then(data=>{
+            if(data.insertedId){
+                alert("Inserted successfully")
+            }
+            console.log(data)
         })
         
     };
