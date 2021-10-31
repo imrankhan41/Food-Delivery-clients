@@ -53,13 +53,17 @@ const PlaceOrder = () => {
                  <img src={users?.photoURL} alt="" srcset="" />
                   <form className="add-user" onSubmit={handleSubmit(onSubmit)}>
                     <input {...register("name", { required: true, maxLength: 100 })} placeholder="Name" value={users?.displayName} />
-                    <input {...register("img")}  placeholder="Personal Photo" value={users?.email}/>
-                    <input {...register("email")}  placeholder="Your Email" value={users?.photoURL}/>
+                    <input {...register("email")}  placeholder="Personal email" value={users?.email}/>
+                    <input {...register("img")}  placeholder="Your Photo" value={users?.photoURL}/>
                     <textarea {...register("address")} placeholder="Address"/>
                     <textarea {...register("city")} placeholder="City" />
-                    <input type="number" {...register("price")} placeholder="Phone Number"/>
+                    <input type="number" {...register("phone number")} placeholder="Phone Number"/>
+                    <input {...register("productName", { required: true, maxLength: 200 })} placeholder="Name" value={details?.name} />
+                    <input {...register("productImg")}  placeholder="Product Photo" value={details?.img}/>
+                    <input type="number" {...register("productPrice")} placeholder="Price" value={details?.price}/>
+                    <textarea {...register("productDescription")} placeholder="Description" value={details?.description}/>
                     {/* <Link className="w-100" to={`/myorders/update/${users.displayName}`}> */}
-                        <input type="submit"/>
+                        <input type="Submit"/>
                         {/* </Link> */}
                 </form>
                </div>
