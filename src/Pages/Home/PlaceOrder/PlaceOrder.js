@@ -57,7 +57,7 @@ const PlaceOrder = () => {
                     <input {...register("img")}  placeholder="Your Photo" value={users?.photoURL}/>
                     <textarea {...register("address")} placeholder="Address"/>
                     <textarea {...register("city")} placeholder="City" />
-                    <input type="number" {...register("phone number")} placeholder="Phone Number"/>
+                    <input type="number" {...register("phoneNumber")} placeholder="Phone Number"/>
                     <input {...register("productName", { required: true, maxLength: 200 })} placeholder="Name" value={details?.name} />
                     <input {...register("productImg")}  placeholder="Product Photo" value={details?.img}/>
                     <input type="number" {...register("productPrice")} placeholder="Price" value={details?.price}/>
