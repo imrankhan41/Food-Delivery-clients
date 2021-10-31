@@ -35,7 +35,7 @@ function App() {
        <PrivateRoute path="/adduser">
          <AddUser></AddUser>
        </PrivateRoute>
-       <PrivateRoute path="/myorders">
+       <PrivateRoute path="/myorders/update/:name">
          <MyOrders></MyOrders>
        </PrivateRoute>
        <PrivateRoute path="/manageallorders">

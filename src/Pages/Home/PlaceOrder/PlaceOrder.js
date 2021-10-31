@@ -3,10 +3,22 @@ import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import useAuth from '../../../hooks/useAuth';
 import "./PlaceOrder.css"
+import { Link } from 'react-router-dom';
 const PlaceOrder = () => {
     const { register, handleSubmit,reset } = useForm();
     const onSubmit = data =>{
-        console.log(data)
+        fetch('http://localhost:5000/orders',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(data)
+        })
+        .then(res=>res.json())
+        .then(result=>{
+            console.log(result)
+        })
+        
     };
     const {users,email}=useAuth();
     const [details,setDetails]=useState({});
@@ -16,6 +28,12 @@ const PlaceOrder = () => {
                 .then(res=>res.json())
                 .then(data =>setDetails(data))
             },[])
+
+            const handleNameChange=e=>{
+                const updatedName =e.target.value;
+                const updateUser ={name:updatedName, email:users?.displayName}
+                
+            }
     return (
         <div>
         {/* <h1>{serviceId}</h1>
@@ -40,13 +58,15 @@ const PlaceOrder = () => {
                  <h4>Email:{users?.email}</h4>
                  <img src={users?.photoURL} alt="" srcset="" />
                   <form className="add-user" onSubmit={handleSubmit(onSubmit)}>
-                    <input {...register("name", { required: true, maxLength: 100 })} placeholder="Name" />
-                    <input {...register("img")}  placeholder="Personal Photo"/>
-                    <input {...register("email")}  placeholder="Your Email"/>
-                    <textarea {...register("text")} placeholder="Address"/>
-                    <textarea {...register("description")} placeholder="Description" />
+                    <input {...register("name", { required: true, maxLength: 100 })} onChange={handleNameChange} placeholder="Name" value={users?.displayName || ''} />
+                    {/* <input {...register("img")}  placeholder="Personal Photo" value={users?.email || ''}/> */}
+                    <input {...register("email")}  placeholder="Your Email" value={users?.photoURL || ''}/>
+                    <textarea {...register("address")} placeholder="Address"/>
+                    <textarea {...register("city")} placeholder="City" />
                     <input type="number" {...register("price")} placeholder="Phone Number"/>
-                    <input type="submit" />
+                    {/* <Link className="w-100" to={`/myorders/update/${users.displayName}`}> */}
+                        <input type="submit"/>
+                        {/* </Link> */}
                 </form>
                </div>
             </div> 
