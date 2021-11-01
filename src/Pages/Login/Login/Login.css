@@ -10,3 +10,16 @@
     margin-bottom: 100px;
 
 }
+.login1{
+    width: 20rem;
+    height: 3rem;
+    border: 1px solid whitesmoke;
+    border-radius: 5px;
+    margin-top: 15px;
+  
+}
+button{
+    background-color: tomato;
+    color:white;
+    font-size: 18px;
+}
