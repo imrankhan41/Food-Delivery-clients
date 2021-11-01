@@ -1,18 +1,24 @@
 import React from 'react';
-import axios from 'axios';
 import { useForm } from "react-hook-form";
 import "./AddUser.css"
 const AddUser = () => {
     const { register, handleSubmit,reset } = useForm();
-    const onSubmit = data => {
-        axios.post('http://localhost:5000/services', data)
-        .then(res => {
-            if (res.data.insertedId) {
-                alert('added successfully');
-                reset();
-            }
+    const onSubmit = data =>{
+          fetch('https://bloodcurdling-nightmare-55136.herokuapp.com/services',{
+            method:'POST',
+            headers:{
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(data)
         })
-    };
+        .then(res=>res.json())
+        .then(data=>{
+            if(data.insertedId){
+                alert("Inserted successfully")
+            }
+            console.log(data)
+        })
+    }
     return (
         <div className="add-user">
             <h1>Please Add User</h1>
