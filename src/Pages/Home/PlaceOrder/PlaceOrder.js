@@ -3,11 +3,10 @@ import { useParams } from 'react-router';
 import { useForm } from "react-hook-form";
 import useAuth from '../../../hooks/useAuth';
 import "./PlaceOrder.css"
-import { Link } from 'react-router-dom';
 const PlaceOrder = () => {
     const { register, handleSubmit,reset } = useForm();
     const onSubmit = data =>{
-        fetch('http://localhost:5000/orders',{
+        fetch('https://bloodcurdling-nightmare-55136.herokuapp.com/orders',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
@@ -27,7 +26,7 @@ const PlaceOrder = () => {
     const [details,setDetails]=useState({});
     const { serviceId } = useParams();
     useEffect(()=>{
-                fetch(`http://localhost:5000/services/${ serviceId}`)
+                fetch(`https://bloodcurdling-nightmare-55136.herokuapp.com/services/${ serviceId}`)
                 .then(res=>res.json())
                 .then(data =>setDetails(data))
             },[])
@@ -53,7 +52,7 @@ const PlaceOrder = () => {
                 <div className="col-lg-6 booking text-secondary add1-user">
                  <h4>Ordered By:{users?.displayName}</h4>
                  <h4>Email:{users?.email}</h4>
-                 <img src={users?.photoURL} alt="" srcset="" />
+                 {/* <img src={users?.photoURL} alt="" srcset="" /> */}
                   <form className="add-user" onSubmit={handleSubmit(onSubmit)}>
                     <input {...register("name", { required: true, maxLength: 100 })} placeholder="Name" value={users?.displayName} />
                     <input {...register("email")}  placeholder="Personal email" value={users?.email}/>
@@ -77,5 +76,3 @@ const PlaceOrder = () => {
 };
 
 export default PlaceOrder;
-
-
