@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
-// import { useParams } from 'react-router';
 import { Link } from 'react-router-dom';
 import "./MyOrders.css"
 const MyOrders = () => {
-   const [user,setUser]=useState([])
+    const [user,setUser]=useState([])
    useEffect(()=>{
-       fetch('http://localhost:5000/orders')
+       fetch('https://bloodcurdling-nightmare-55136.herokuapp.com/orders')
        .then(res=>res.json())
        .then(data=>setUser(data))
    },[])
@@ -13,7 +12,7 @@ const MyOrders = () => {
        
        const proceed=window.confirm("Are you sure for deleting it?")
        if(proceed){
-        const url=`http://localhost:5000/orders/${id}`
+        const url=`https://bloodcurdling-nightmare-55136.herokuapp.com/orders/${id}`
         fetch(url,{
             method:"DELETE"
         })
@@ -32,8 +31,11 @@ const MyOrders = () => {
     return (
         <div className="My-orders">
             <h1>My All Orders</h1>
-            <table className="table mx-3 ">
-                <thead className="bg-secondary">
+            <div className="table-style">
+
+         
+            <table className="table mx-3">
+                <thead className="bg-secondary ">
                     <tr>
                     <th scope="col">#</th>
                     <th scope="col">User Name</th>
@@ -63,6 +65,7 @@ const MyOrders = () => {
                     ))}
                 </tbody>
                 </table>
+                </div>
         </div>
     );
 };
